@@ -716,6 +716,19 @@ int uart_pattern_pop_pos(uart_port_t uart_num);
  */
 esp_err_t uart_pattern_queue_reset(uart_port_t uart_num, int queue_length);
 
+/**
+ * @brief UART enable RS-485 mode and RS-485 half-duplex line driver control using TRS control line
+ *
+ * @param uart_num UART port number.
+ *
+ * @return
+ *  - ESP_OK Success
+ *  - ESP_FAIL Parameter error
+ *
+ * @note Copied from https://github.com/espressif/esp-idf/pull/1006
+ */
+esp_err_t uart_set_rs485_hd_mode(uart_port_t uart_num, bool enable);
+
 #ifdef __cplusplus
 }
 #endif
